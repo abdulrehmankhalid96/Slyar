@@ -1,0 +1,116 @@
+<!--Navbar-->
+
+<!--Double navigation-->
+<header>
+  <!-- Sidebar navigation -->
+  <mdb-side-nav #sidenav class="wide sn-bg-1 fixed navBar" [fixed]="true">
+    <mdb-navbar-brand>
+      <!-- Logo -->
+
+      <div class="logo-wrapper waves-light">
+        <div class="waves-light">
+          <a href="#"><img src="assets/img/slylog_green.png" class="img-fluid" /></a>
+        </div>
+      </div>
+
+      <!--/. Logo -->
+    </mdb-navbar-brand>
+    <links>
+      <!--Social-->
+
+      <!--/Social-->
+      <!--Search Form-->
+
+      <!--/.Search Form-->
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <mdb-accordion [multiple]="true" aria-multiselectable="false">
+            <!-- Collapsible link -->
+            <mdb-accordion-item>
+              <mdb-accordion-item-head mdbWavesEffect>
+                <mdb-icon fas icon="chevron-right"></mdb-icon>
+                HR
+              </mdb-accordion-item-head>
+              <mdb-accordion-item-body>
+                <ul>
+                  <li><a routerLink="/hr/OverView" mdbWavesEffect>OverView</a></li>
+
+                  <li><a routerLink="/hr/AddEmploye" mdbWavesEffect>Add Employee</a></li>
+                  <li><a routerLink="/hr/TimeSheet" mdbWavesEffect>Time Sheet</a></li>
+                  <li><a routerLink="/hr/Cost&fin" mdbWavesEffect>Costs/Financial</a></li>
+                  <li><a routerLink="/hr/Setting" mdbWavesEffect>Setting</a></li>
+                </ul>
+              </mdb-accordion-item-body>
+            </mdb-accordion-item>
+
+            <!-- Simple link -->
+
+            <!-- Collapsible link -->
+
+            <!-- Simple link -->
+          </mdb-accordion>
+        </ul>
+      </li>
+      <!--/. Side navigation links -->
+    </links>
+    <div class="sidenav-bg mask-strong"></div>
+  </mdb-side-nav>
+  <!--/. Sidebar navigation -->
+
+  <!-- Navbar -->
+  <mdb-navbar
+    SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav"
+    [containerInside]="false"
+  >
+    <navlinks class="navbar-container">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a (click)="sidenav.show()" class="button-collapse">
+          <mdb-icon class="set" fas icon="bars"></mdb-icon>
+        </a>
+      </div>
+      <!--/. SideNav slide-out button -->
+    </navlinks>
+
+    <mdb-navbar-brand>
+      <!-- Breadcrumb-->
+      <div class="breadcrumbs breadcrumb-dn mr-auto">
+        <h4 class="set" style="padding: 12% 0% 0% 70%">SlyVar</h4>
+      </div>
+      <!--/. Breadcrumb-->
+    </mdb-navbar-brand>
+
+    <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <mdb-icon class="set" fas icon="envelope"></mdb-icon>
+            <span class="" class="clearfix d-none d-sm-inline-block set">Contact</span>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a
+            dropdownToggle
+            type="button"
+            class="nav-link dropdown-toggle waves-light set"
+            mdbWavesEffect
+          >
+            <img src="assets/img/placeholder.jpg" style="height: 26px; border-radius: 20px" />
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </navlinks>
+  </mdb-navbar>
+  <!--/. Navbar -->
+</header>
+<!--/.Double navigation-->
+
+<!--Main Layout-->
+
+<!--/Main layout-->
+<!--/.Navbar-->

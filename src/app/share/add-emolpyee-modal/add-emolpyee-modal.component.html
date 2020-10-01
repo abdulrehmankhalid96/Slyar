@@ -1,0 +1,276 @@
+<div
+  mdbModal
+  #basicModal
+  class="modal fade bottom"
+  tabindex="-1"
+  role="dialog"
+  style="overflow-y: scroll"
+  aria-labelledby="myBasicModalLabel"
+  [config]="{ backdrop: true, ignoreBackdropClick: true }"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="basicModal.hide()"
+          id="hidebtn"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Add Employee</h4>
+      </div>
+      <div class="modal-body">
+        <mdb-stepper #stepper [linear]="true">
+          <mdb-step name="Basic Data" class="step1">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate id="firstfield" />
+                    <label for="">Vorname</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Email</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Name</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Tel.</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 sendHeader"><i class="fa fa-address-book"></i> Personal Data</div>
+                <div class="col-6 sendHeader"><i class="fa fa-briefcase"></i> Position</div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Address</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Facilty Manager</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">PLZ</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Department</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Stadt</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Personal Nummer</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Land</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Career Level</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="row" style="float: right; margin-top: 2.6rem !important">
+              <button
+                type="button"
+                mdbBtn
+                color="secondary"
+                size="sm"
+                class="waves-light"
+                aria-label="Close"
+                (click)="basicModal.hide()"
+                mdbWavesEffect
+              >
+                Close
+              </button>
+              <button mdbBtn size="sm" color="primary" (click)="stepper.next()">CONTINUE</button>
+            </div>
+          </mdb-step>
+          <mdb-step name="Account Data" class="step2">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Kontoinhaber</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Bank Name</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">IBAN</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">BIC</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 col-md-6 col-sm-8 mx-auto" style="text-align: center">
+                  <img src="assets/img/BankCard2.png" style="height: 150px" />
+                </div>
+              </div>
+            </form>
+            <div class="row" style="float: right; margin-top: 2.6rem !important">
+              <button mdbBtn size="sm" color="secondary" (click)="stepper.previous()">BACK</button>
+              <button mdbBtn size="sm" color="primary" (click)="stepper.next()">CONTINUE</button>
+            </div>
+          </mdb-step>
+          <mdb-step name="Contract Data" class="step3">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="date" class="form-control" mdbInput mdbValidate />
+                    <label for="">Contract Begin</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="md-form">
+                    <input type="date" class="form-control" mdbInput mdbValidate />
+                    <label for="">Contract Begin</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="md-form">
+                    <textarea
+                      type="text"
+                      id="form7"
+                      class="md-textarea form-control"
+                      mdbInput
+                    ></textarea>
+                    <label for="">Aufgabenbeschreibung</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Steuer-Identifikationsnummer</label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Sozialversicherungsnummer</label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Steuerkla</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Name GKV/PKV</label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">KV-Nummer</label>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="md-form">
+                    <input type="text" class="form-control" mdbInput mdbValidate />
+                    <label for="">Gehalt/Lahn</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="row" style="float: right; margin-top: 2.6rem !important">
+              <button mdbBtn size="sm" color="secondary" (click)="stepper.previous()">BACK</button>
+              <button mdbBtn size="sm" color="primary" (click)="save()">SUBMIT</button>
+            </div>
+          </mdb-step>
+        </mdb-stepper>
+      </div>
+      <!-- <div class="modal-footer">
+        <button
+          type="button"
+          mdbBtn
+          color="secondary"
+          class="waves-light"
+          aria-label="Close"
+          (click)="basicModal.hide()"
+          mdbWavesEffect
+        >
+          Close
+        </button>
+        <button
+          (click)="save()"
+          type="button"
+          mdbBtn
+          color="primary"
+          class="relative waves-light"
+          mdbWavesEffect
+        >
+          Save!
+        </button>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="container-fluid main">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-8 offset-md-2 offset-lg-2" style="padding-top: 4rem">
+      <mdb-card>
+        <mdb-card-header
+          style="background: #2e9d97 !important"
+          class="info-color white-text text-center py-4"
+        >
+          <h5>
+            <strong>Sign in</strong>
+          </h5>
+        </mdb-card-header>
+
+        <!--Card content-->
+        <mdb-card-body class="px-lg-5 pt-0">
+          <!-- Form -->
+          <form class="text-center" style="color: #757575">
+            <!-- Email -->
+            <div class="md-form">
+              <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput />
+              <label for="materialLoginFormEmail">E-mail</label>
+            </div>
+
+            <!-- Password -->
+            <div class="md-form">
+              <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput />
+              <label for="materialLoginFormPassword">Password</label>
+            </div>
+
+            <div class="d-flex justify-content-around">
+              <div>
+                <!-- Remember me -->
+                <mdb-checkbox style="color: #2e9d97 !important">Remember me</mdb-checkbox>
+              </div>
+              <div>
+                <!-- Forgot password -->
+                <a href="" style="color: #2e9d97 !important">Forgot password?</a>
+              </div>
+            </div>
+
+            <!-- Sign in button -->
+            <button
+              mdbBtn
+              style="background-color: #2e9d97 !important; border: none !important"
+              color="white"
+              outline="true"
+              rounded="true"
+              block="true"
+              class="my-4 waves-effect z-depth-0"
+              mdbWavesEffect
+              type="submit"
+              (click)="sigin()"
+            >
+              Sign in
+            </button>
+
+            <!-- Register -->
+            <p>
+              Not a member?
+              <a href="">Register</a>
+            </p>
+
+            <!-- Social login -->
+            <p>or sign in with:</p>
+            <a type="button" mdbBtn floating="true" color="fb" size="sm">
+              <mdb-icon fab icon="facebook"></mdb-icon>
+            </a>
+            <a type="button" mdbBtn floating="true" color="tw" size="sm">
+              <mdb-icon fab icon="twitter"></mdb-icon>
+            </a>
+            <a type="button" mdbBtn floating="true" color="li" size="sm">
+              <mdb-icon fab icon="linkedin"></mdb-icon>
+            </a>
+            <a type="button" mdbBtn floating="true" color="git" size="sm">
+              <mdb-icon fab icon="github"></mdb-icon>
+            </a>
+          </form>
+          <!-- Form -->
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>
+<!-- Material form login -->
+
+<!-- Material form login -->

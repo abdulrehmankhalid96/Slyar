@@ -1,0 +1,162 @@
+<app-layout></app-layout>
+
+<div class="container" style="padding-top: 5rem">
+  <div class="row" style="box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.5)">
+    <div class="col-12 tableFirstRow">
+      <div style="float: left"><p>Employees Data</p></div>
+      <div style="float: right">
+        <input
+          class="form-control"
+          placeholder="Serach"
+          style="width: 100%; border-radius: 30px; border: none"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="row"
+    style="
+      background: #fcfcfd;
+      padding: 0.6rem;
+      text-align: center;
+      box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    "
+  >
+    <div class="col-4">
+      <button
+        mdbBtn
+        type="button"
+        mdbWavesEffect
+        class="btn btn-outline-default btn-rounded waves-effect buttonIconTable"
+        (click)="toRouter('/hr/EmpProfile')"
+      >
+        <i class="fa fa-plus"></i>
+
+        Create
+      </button>
+    </div>
+    <div class="col-4">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="dropdown-toggle buttonIconTable"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa fa-sliders-h"></i> Action
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" *ngFor="let data of pagerList">{{ data }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="dropdown-toggle buttonIconTable"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa fa-list-ol"></i> Show
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item">Contract Ending</a>
+          <a class="dropdown-item">Open Costs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="box-shadow: 2px 5px 4px 2px rgba(0, 0, 0, 0.5)">
+    <div class="col-12" style="padding: 0px">
+      <div class="table-responsive settable">
+        <table class="table" mdbTable hover="true">
+          <thead>
+            <tr class="tblHeader">
+              <th class="th-lg" id="overviewId">
+                <a
+                  >Personal Nr.
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewName">
+                <a
+                  >Vorname
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewLastname">
+                <a
+                  >Nachname
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewTel">
+                <a
+                  >Telefon Nr.
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewEmail">
+                <a
+                  >E-Mail
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="text-align: center" *ngFor="let data of listData">
+              <td>{{ data.id }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.lastname }}</td>
+              <td>{{ data.telephone }}</td>
+              <td>{{ data.email }}</td>
+              <td style="text-align: center">
+                <a style="padding: 0.4rem">
+                  <button
+                    mdbBtn
+                    type="button"
+                    class="btn btn-outline-success btn-rounded waves-effect btn-sm"
+                    data-target="addPersonalHR"
+                    (click)="toRouter('/hr/EmpProfile')"
+                  >
+                    <i class="fa fa-info fa-lg"></i>
+                  </button>
+                </a>
+                <a style="padding: 0.4rem">
+                  <button
+                    mdbBtn
+                    type="button"
+                    class="btn btn-outline-danger btn-rounded waves-effect btn-sm"
+                    (click)="toRouter('hr/Cost&fin')"
+                  >
+                    <i class="fas fa-euro-sign"></i>
+                  </button>
+                </a>
+                <a style="padding: 0.4rem">
+                  <button
+                    mdbBtn
+                    type="button"
+                    (click)="toRouter('hr/TimeSheet')"
+                    class="btn btn-outline-warning btn-rounded waves-effect btn-sm"
+                  >
+                    <i class="far fa-clock"></i>
+                  </button>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<app-add-emolpyee-modal></app-add-emolpyee-modal>
+<app-loader></app-loader>

@@ -1,0 +1,222 @@
+<app-layout></app-layout>
+<div class="container" style="padding-top: 5rem">
+  <div class="row" style="box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.5)">
+    <div class="col-12 tableFirstRow">
+      <div style="float: left">
+        <p>Time Sheet</p>
+      </div>
+      <div style="float: right">
+        <input class="form-control" placeholder="Serach" style="width: 100%" />
+      </div>
+    </div>
+  </div>
+  <div
+    class="row"
+    style="
+      background: #fcfcfd;
+      padding: 0.6rem;
+      text-align: center;
+      box-shadow: 1px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    "
+  >
+    <div class="col-4">
+      <button
+        mdbBtn
+        type="button"
+        mdbWavesEffect
+        class="btn btn-outline-default btn-rounded waves-effect buttonIconTable"
+        (click)="basicModal.show()"
+      >
+        HINZUFUGEN
+      </button>
+    </div>
+
+    <!-- <div class="col-4">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="dropdown-toggle buttonIconTable"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa fa-list-ol"></i> Show
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item">Contract Ending</a>
+          <a class="dropdown-item">Open Costs</a>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="row" style="box-shadow: 2px 5px 4px 2px rgba(0, 0, 0, 0.5)">
+    <div class="col-12" style="padding: 0px">
+      <div class="table-responsive settable">
+        <table class="table" mdbTable hover="true">
+          <thead>
+            <tr class="tblHeader">
+              <th class="th-lg" id="overviewId">
+                <a
+                  >Datum
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewName">
+                <a
+                  >Ankunft
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewLastname">
+                <a
+                  >Ausgang
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewTel">
+                <a
+                  >Pause
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center" id="overviewEmail">
+                <a
+                  >Stunden
+                  <i class="fa fa-sort"></i>
+                </a>
+              </th>
+              <th class="th-lg" style="text-align: center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dataRow">
+              <td><i class="fa fa-male"></i> 28.09.2020</td>
+              <td>8:00</td>
+              <td>12:00</td>
+              <td>02:00</td>
+              <td>2h</td>
+              <td>
+                <button
+                  mdbBtn
+                  type="button"
+                  class="mt-0 default-color-dark text-white"
+                  rounded="true"
+                  mdbWavesEffect
+                  size="sm"
+                  style="padding: 0.4rem 0.8rem !important"
+                  (click)="basicModal.show()"
+                >
+                  <i class="fa fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- time modal -->
+<div
+  mdbModal
+  #basicModal
+  class="modal fade bottom"
+  tabindex="-1"
+  role="dialog"
+  style="overflow-y: scroll"
+  aria-labelledby="myBasicModalLabel"
+  [config]="{ backdrop: true, ignoreBackdropClick: true }"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="basicModal.hide()"
+          id="hidebtn"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Arbeitszeiten</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="date" class="form-control" mdbInput mdbValidate />
+              <label for="">Selected Date</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="time" class="form-control" mdbInput mdbValidate />
+              <label for="">Arbeitsbeginn</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="time" class="form-control" mdbInput mdbValidate />
+              <label for="">Arbeitsende</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="text" class="form-control" mdbInput mdbValidate id="firstfield" />
+              <label for="">Pause</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="text" class="form-control" mdbInput mdbValidate />
+              <label for="">Projekt</label>
+            </div>
+          </div>
+          <div class="col-4 col-md-4 col-sm-12">
+            <div class="md-form">
+              <input type="text" class="form-control" mdbInput mdbValidate />
+              <label for="">Auftragsnummer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-md-6 col-sm-12">
+            <div class="md-form">
+              <input type="text" class="form-control" mdbInput mdbValidate id="firstfield" />
+              <label for="">Projekt</label>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-sm-12">
+            <div class="md-form">
+              <input type="text" class="form-control" mdbInput mdbValidate />
+              <label for="">Abteilung/Personalnummer</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          mdbBtn
+          color="secondary"
+          class="waves-light"
+          aria-label="Close"
+          (click)="basicModal.hide()"
+          mdbWavesEffect
+        >
+          Close
+        </button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>
+          Save!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
